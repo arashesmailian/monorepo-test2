@@ -1,6 +1,9 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import _ from "lodash";
+// import { QueryPayload } from "simple-express-server/server";
+import { QueryPayload } from "simple-shared-data";
 
 function App() {
   return (
@@ -16,15 +19,13 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          {_.toUpper("Learn React")}
         </a>
-
-        {/* NEW */}
         <button
           onClick={() => {
-            fetch("http://localhost:3001/data", {})
+            fetch("http://localhost:3001/", {})
               .then((response) => response.json())
-              .then((data) => console.log(data));
+              .then((data: QueryPayload) => console.log(data.payload));
           }}
         >
           GET SOME DATA
