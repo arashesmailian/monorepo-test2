@@ -4,6 +4,7 @@ import "./App.css";
 import _ from "lodash";
 // import { QueryPayload } from "simple-express-server/server";
 import { QueryPayload } from "simple-shared-data";
+import DarkMode from "./react-dark-mode/src/DarkMode";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         >
           GET SOME DATA
         </button>
+        <DarkMode />
       </header>
     </div>
   );
